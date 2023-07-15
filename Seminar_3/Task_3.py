@@ -12,7 +12,7 @@ bag_list = []
 count = 0
 
 for key, value in bag.items():
-    if count <= MAX_LOAD:
+    if count < MAX_LOAD:
         count += value
         bag_list.append(key)
 
