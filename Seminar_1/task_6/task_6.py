@@ -6,8 +6,8 @@
 
 def digit_check():
     try:
-        lenght = int(input('Введите год:\n'))
-        return lenght
+        input_num = int(input('Введите год:\n'))
+        return input_num
     except ValueError:
         print('Это должно быть число!\n')
         digit_check()
@@ -15,17 +15,23 @@ def digit_check():
 
 def find_year():
     year = digit_check()
-    if year <= 1918 and year % 4 == 0:
-        print(year, " год высокосный")
-    elif year > 1918 and year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-        print(year, " год высокосный")
+    print(type(year))
+    gregorian_calendar = 1582
+    if year <= gregorian_calendar and year % 4 == 0:
+        result = "Год высокосный"
+    elif year > gregorian_calendar and year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+        result = "Год высокосный"
     else:
-        print(year, " год не высокосный")
+        result = "Год не высокосный"
+    print(year, result)
+
 
 
 find_year()
 
+
 while True:
+
     key = input('Попробуем ещё разок? [y/n]: ')
     if key == 'y':
         find_year()

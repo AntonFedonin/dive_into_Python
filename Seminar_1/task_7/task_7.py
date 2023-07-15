@@ -6,3 +6,21 @@
 # Если число не из диапазона, запросите новое число
 # Откажитесь от магических чисел
 # В коде должны быть один input и один print
+
+def digit_check():
+    try:
+        num = int(input('Введите число от 1 до 999:\n'))
+        return num
+    except ValueError:
+        print('Это должно быть число!\n')
+        digit_check()
+
+
+def get_number():
+    number = digit_check()
+    if number < 1 or number > 999:
+        get_number()
+
+
+
+
