@@ -1,7 +1,7 @@
 def digit_check():
     try:
-        lenght = int(input('\n'))
-        return lenght
+        number = int(input('\n'))
+        return number
     except ValueError:
         print('Это должно быть число\n')
         return digit_check()

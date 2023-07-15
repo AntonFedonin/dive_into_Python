@@ -1,9 +1,8 @@
 # Создадим главное меню банкомата
 
-def menu(remainder):
-    greetings = 'Здравствуйте, клиент!'
-    choice = 'Выберите операцию:'
-    take_off = 'Снять'
-    top_up = 'Пополнить'
-    ex = 'Выйти'
-    
+import input
+import controller
+
+
+
+
