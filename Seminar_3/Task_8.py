@@ -12,10 +12,11 @@
 dict_friends = {"Степан": ("Палатка", "Спальник", "Фонарик"), "Коля": ("Спальник", "Спички", "Фонарик"),
                 "Оля": ("Спальник", "Фонарик", "Продукты"), "Галя": ("Спальник", "Котелки", "Столовые приборы")}
 
-all_staff_set = {}
-unique_staff = {}
+all_staff_set = set({})
+unique_staff = set({})
 popular_staff = {}
 
 for value in dict_friends.values():
-        all_staff_set.add(value)
+        for i in value:
+            all_staff_set.add(i)
 print(all_staff_set)
