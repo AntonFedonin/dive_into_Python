@@ -36,26 +36,25 @@ def get_collection(path):
                 'size': size
             })
         for name in file_name:
-            filepath=os.path.join(dir_path, name)
-            size=os.path.getsize(filepath)
+            filepath = os.path.join(dir_path, name)
+            size = os.path.getsize(filepath)
             data.append({
                 'name': name,
                 'type': 'file',
                 'parent_directory': dir_path,
                 'size': size
             })
-    with (open('directory_data.json','w') as json_file,
-          open('directory_data.csv','w', newline='') as csv_file,
-          open('directory_data.pickle','w') as pickle_file,):
+    with (open('directory_data.json', 'w') as json_file,
+          open('directory_data.csv', 'w', newline='') as csv_file,
+          open('directory_data.pickle', 'w') as pickle_file, ):
         json.dump(data, json_file, indent=2)
 
-        filenames = ['name', 'type', 'parent_directory', 'size']
-        writer = csv.DictWriter(csv_file, filenames=filenames)
+        filednames = ['name', 'type', 'parent_directory', 'size']
+        writer = csv.DictWriter(csv_file, fieldnames=filednames)
         writer.writeheader()
         writer.writerow(data)
 
         pickle.dump(data, pickle_file)
 
-
-
-get_collection(Path.cwd())
+if __name__=='__main__':
+    get_collection(Path.cwd())
