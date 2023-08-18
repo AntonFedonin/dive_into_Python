@@ -49,12 +49,13 @@ def get_collection(path):
           open('directory_data.pickle', 'w') as pickle_file, ):
         json.dump(data, json_file, indent=2)
 
-        filednames = ['name', 'type', 'parent_directory', 'size']
-        writer = csv.DictWriter(csv_file, fieldnames=filednames)
+        filed_names = ['name', 'type', 'parent_directory', 'size']
+        writer = csv.DictWriter(csv_file, fieldnames=filed_names)
         writer.writeheader()
         writer.writerow(data)
 
         pickle.dump(data, pickle_file)
 
-if __name__=='__main__':
+
+if __name__ == "__main__":
     get_collection(Path.cwd())

@@ -1,26 +1,8 @@
 [
   {
-    "name": "directory_data.csv",
-    "type": "file",
-    "parent_directory": "C:\\Users\\\u0424\u0435\u0434\u043e\u043d\u0438\u043d \u0410\u043d\u0442\u043e\u043d\\Desktop\\GeekBrains\\pythonProject\\dive_into_Python\\Seminar_8",
-    "size": 33
-  },
-  {
-    "name": "directory_data.json",
-    "type": "file",
-    "parent_directory": "C:\\Users\\\u0424\u0435\u0434\u043e\u043d\u0438\u043d \u0410\u043d\u0442\u043e\u043d\\Desktop\\GeekBrains\\pythonProject\\dive_into_Python\\Seminar_8",
-    "size": 1045
-  },
-  {
-    "name": "directory_data.pickle",
-    "type": "file",
-    "parent_directory": "C:\\Users\\\u0424\u0435\u0434\u043e\u043d\u0438\u043d \u0410\u043d\u0442\u043e\u043d\\Desktop\\GeekBrains\\pythonProject\\dive_into_Python\\Seminar_8",
-    "size": 0
-  },
-  {
     "name": "Task_1.py",
     "type": "file",
     "parent_directory": "C:\\Users\\\u0424\u0435\u0434\u043e\u043d\u0438\u043d \u0410\u043d\u0442\u043e\u043d\\Desktop\\GeekBrains\\pythonProject\\dive_into_Python\\Seminar_8",
-    "size": 2345
+    "size": 2351
   }
 ]
