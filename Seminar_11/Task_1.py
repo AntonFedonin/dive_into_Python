@@ -5,6 +5,7 @@
 # ○ *умножения матриц
 
 from copy import deepcopy
+import random
 
 
 class Matrix:
@@ -29,18 +30,24 @@ class Matrix:
                 if len(numbers) == len(self.matrix):
                     result.append(numbers)
                     numbers = []
-        return Matrix(result)
+        matrix = result
+        return Matrix(matrix)
 
 
-# def get_array() -> list[list[int]]:
-#     new = [[i for i in range(random.randrange(0, 9))] for i in range(random.randrange(0, 9))]
-#     return new
+def get_array() -> list[list[int]]:
+    new = list()
+
+    for i in range(0, 2):
+        temp = []
+        for j in range(0, 3):
+            temp.append(random.randint(0, 9))
+        new.append(temp)
+    return new
 
 
-a = Matrix([[1, 2, 3], [4, 5, 6]])
-b = Matrix([[1, 2, 3], [4, 5, 6]])
-c = a + b
-
+a = Matrix(get_array())
+b = Matrix(get_array())
 print(a)
 print(b)
+c = a + b
 print(c)
