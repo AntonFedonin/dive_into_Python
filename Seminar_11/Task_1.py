@@ -47,7 +47,10 @@ def get_array() -> list[list[int]]:
 
 a = Matrix(get_array())
 b = Matrix(get_array())
+
 print(a)
 print(b)
+
 c = a + b
 print(c)
+
