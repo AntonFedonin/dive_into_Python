@@ -4,35 +4,43 @@
 # ○ сложения,
 # ○ *умножения матриц
 
-import numpy as np
+from copy import deepcopy
 
 
 class Matrix:
 
     def __init__(self, arr):
-        self.arr = arr
+        self.matrix = deepcopy(arr)
 
     def __repr__(self):
-        return f'{self.arr}'
+        return f'{self.matrix}'
 
     def __eq__(self, other):
-        return self.arr is other.arr
+        return self.matrix is other.matrix
 
     def __add__(self, other):
-        lst = []
-        for i in range(len(self.arr)):
-            for j in range(len(self.arr[0])):
-                lst.append(self.arr[i, j] + other.arr[i, j])
-        arr = lst
+        other = Matrix(other)
+        result = []
+        numbers = []
+        for i in range(len(self.matrix)):
+            for j in range(len(self.matrix[0])):
+                summa = other[i][j] + self.matrix[i][j]
+                numbers.append(summa)
+                if len(numbers) == len(self.matrix):
+                    result.append(numbers)
+                    numbers = []
+        return Matrix(result)
 
-        return Matrix(arr)
+
+# def get_array() -> list[list[int]]:
+#     new = [[i for i in range(random.randrange(0, 9))] for i in range(random.randrange(0, 9))]
+#     return new
 
 
 a = Matrix([[1, 2, 3], [4, 5, 6]])
-# b = np.array(Matrix([[9, 8, 7], [6, 5, 4]]))
 b = Matrix([[1, 2, 3], [4, 5, 6]])
-
 c = a + b
+
 print(a)
 print(b)
 print(c)
