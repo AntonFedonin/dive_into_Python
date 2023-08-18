@@ -14,9 +14,8 @@ class Matrix:
         else:
             self.arr2 = arr2
 
-    def _str(self):
+    def __str__(self):
         return f'{self.arr1}, {self.arr2}'
-
 
 
 
