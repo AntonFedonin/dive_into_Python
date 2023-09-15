@@ -5,9 +5,6 @@
 
 import logging
 
-logging.basicConfig(filename='logFile', filemode='w', encoding='utf-8', level=logging.NOTSET)
-logger = logging.getLogger(__name__)
-
 
 class NegativeWidthError(ValueError):
     def __init__(self, value):
@@ -57,27 +54,30 @@ class Rectangle:
         return 2 * (self._width + self._height)
 
 
-rectangle = Rectangle(4, 5)
-print("Width:", rectangle.width)
-print("Height:", rectangle.height)
-print("Area:", rectangle.area)
-print("Perimeter:", rectangle.perimeter)
+if __name__ == '__main__':
+    logging.basicConfig(filename='logFile', filemode='w', encoding='utf-8', level=logging.NOTSET)
+    logger = logging.getLogger(__name__)
 
-rectangle.width = 6
-rectangle.height = 8
-print("Updated Width:", rectangle.width)
-print("Updated Height:", rectangle.height)
-print("Updated Area:", rectangle.area)
-print("Updated Perimeter:", rectangle.perimeter)
+    rectangle = Rectangle(4, 5)
+    logger.info(f'"Width:", {rectangle.width}')
+    logger.info(f'"Height:", {rectangle.height}')
+    logger.info(f'"Area:", {rectangle.area}')
+    logger.info(f'"Perimeter:", {rectangle.perimeter}')
 
-try:
-    rectangle.width = -2
-except NegativeWidthError as e:
-    logger.error('Значение не может быть отрицательным')
+    rectangle.width = 6
+    rectangle.height = 8
 
+    logger.info(f'"Updated Width:", {rectangle.width}')
+    logger.info(f'"Updated Height:", {rectangle.height}')
+    logger.info(f'"Updated Area:", {rectangle.area}')
+    logger.info(f'"Updated Perimeter:", {rectangle.perimeter}')
 
-try:
-    rectangle.height = -3
-except NegativeHeightError as e:
-    logger.error('Значение не может быть отрицательным')
+    try:
+        rectangle.width = -2
+    except NegativeWidthError as e:
+        logger.error(e.message)
 
+    try:
+        rectangle.height = -3
+    except NegativeHeightError as e:
+        logger.error(e.message)
