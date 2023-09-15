@@ -8,3 +8,4 @@ INFO:__main__:"Updated Area:", 48
 INFO:__main__:"Updated Perimeter:", 28
 ERROR:__main__:Invalid width: -2. Width cannot be negative.
 ERROR:__main__:Invalid height: -3. Height cannot be negative.
+INFO:__main__:"Updated in terminal:", Namespace(num=[8, 16])

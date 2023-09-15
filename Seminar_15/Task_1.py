@@ -4,6 +4,7 @@
 # Например, нельзя создавать прямоугольник со сторонами отрицательной длины.
 
 import logging
+import argparse
 
 
 class NegativeWidthError(ValueError):
@@ -81,3 +82,16 @@ if __name__ == '__main__':
         rectangle.height = -3
     except NegativeHeightError as e:
         logger.error(e.message)
+
+    parser = argparse.ArgumentParser(description='Wigth and Higth of rectangle')
+    parser.add_argument('num', metavar='N', type=int, nargs='*', help='press wigth and higth')
+    args = parser.parse_args()
+    logger.info(f'"Updated in terminal:", {args}')
+    rectangle.width = args[0]
+    rectangle.height = args[1]
+    logger.info(f'"Updated Width in terminal:", {rectangle.width}')
+    logger.info(f'"Updated Height in terminal:", {rectangle.height}')
+    logger.info(f'"Updated Area in terminal:", {rectangle.area}')
+    logger.info(f'"Updated Perimeter in terminal:", {rectangle.perimeter}')
+
+# python .\Task_1.py 3 4
